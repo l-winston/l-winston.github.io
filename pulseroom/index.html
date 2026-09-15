@@ -3,32 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PulseRoom — a music-reactive black-hole scene built in Unreal Engine. Watch the current Inferno preview.">
+  <meta name="description" content="PulseRoom — a music-reactive black hole in Cryogenic. Watch the 1440p, 60 FPS offline render with synchronized music.">
   <title>PulseRoom — Scene Preview</title>
   <style>
     :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #080808; color: #eee; }
     body { margin: 0; }
-    main { max-width: 1200px; margin: auto; padding: 44px 20px; }
+    main { max-width: 1440px; margin: auto; padding: 44px 20px; }
     header { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; flex-wrap: wrap; }
     h1 { margin: 0; font-size: clamp(26px, 5vw, 42px); letter-spacing: .12em; font-weight: 500; }
-    .label { color: #ff9365; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+    .label { color: #8ce5ff; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
     p { color: #aaa; line-height: 1.6; }
-    video { display: block; width: 100%; background: #000; border: 1px solid #27201d; border-radius: 12px; margin-top: 26px; }
+    video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; border: 1px solid #23323d; border-radius: 12px; margin-top: 26px; }
     footer { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; font-size: 13px; margin-top: 18px; color: #929292; }
-    a { color: #ffc0a3; text-underline-offset: 4px; }
-    a:focus-visible { outline: 2px solid #ff9365; outline-offset: 5px; }
+    a { color: #a9eaff; text-underline-offset: 4px; }
+    a:focus-visible { outline: 2px solid #8ce5ff; outline-offset: 5px; }
   </style>
 </head>
 <body>
   <main>
-    <header><h1>PULSE / ROOM</h1><span class="label">Inferno · Unreal Engine</span></header>
+    <header><h1>PULSE / ROOM</h1><span class="label">Cryogenic · 1440p / 60 FPS</span></header>
     <p>A music-reactive black hole: fractured geometry, swirling atmosphere and gravitational lensing.</p>
-    <video controls playsinline loop preload="metadata" poster="poster.jpg" aria-label="Music-reactive recording of PulseRoom's Inferno scene with sound. Contains flashing lights.">
-      <source src="preview.mp4" type="video/mp4">
-      Your browser cannot play this video. <a href="preview.mp4">Download the preview</a>.
+    <video controls playsinline loop preload="metadata" poster="poster.jpg?v=68df4f35-hq" aria-label="24-second Cryogenic music visualization, rendered at 1440p and 60 frames per second, with sound. Contains flashing lights.">
+      <source src="preview.mp4?v=68df4f35-hq" type="video/mp4">
+      Your browser cannot play this video. <a href="preview.mp4?v=68df4f35-hq">Download the film</a>.
     </video>
-    <footer><span>Recorded September 14, 2026 · 24-second preview with sound · Contains flashing lights</span><a href="preview.mp4">Open video</a></footer>
-    <p>Press play to watch with music. This is a recording of the current scene, not a live browser simulation.<br>Music: Dave Summer — Where Did You Go (Club Mix).</p>
+    <footer><span>24 seconds · Synchronized music · Contains flashing lights</span><a href="preview.mp4?v=68df4f35-hq">Open full-resolution film</a></footer>
+    <p>Press play, then use fullscreen for the best view. Each of the 1,440 frames was rendered individually in Unreal Engine at 2560 × 1440 — this is an offline film, not a screen recording or live browser simulation.<br>Music: Dave Summer — Where Did You Go (Club Mix). Visual build: 68df4f35.</p>
   </main>
 </body>
 </html>
