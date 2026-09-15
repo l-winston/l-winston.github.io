@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PulseRoom — a music-reactive black hole in Cryogenic. Watch the 1440p, 60 FPS offline render with synchronized music.">
+  <meta name="description" content="PulseRoom — two music-reactive black hole films: Cryogenic with Where Did You Go and Inferno with Vertigo. Buildup-to-drop excerpts in 1440p at 60 FPS.">
   <title>PulseRoom — Scene Preview</title>
   <style>
     :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #080808; color: #eee; }
@@ -17,18 +17,45 @@
     footer { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; font-size: 13px; margin-top: 18px; color: #929292; }
     a { color: #a9eaff; text-underline-offset: 4px; }
     a:focus-visible { outline: 2px solid #8ce5ff; outline-offset: 5px; }
+    section { margin-top: 36px; }
+    section + section { border-top: 1px solid #303034; padding-top: 36px; margin-top: 52px; }
+    h2 { font-size: 23px; font-weight: 500; margin: 0; }
+    .song { margin: 8px 0 0; }
+    .inferno .label, .inferno a { color: #ffae72; }
+    .inferno video { border-color: #57302b; }
   </style>
 </head>
 <body>
   <main>
-    <header><h1>PULSE / ROOM</h1><span class="label">Cryogenic · 1440p / 60 FPS</span></header>
+    <header><h1>PULSE / ROOM</h1><span class="label">1440p / 60 FPS</span></header>
     <p>A music-reactive black hole: fractured geometry, swirling atmosphere and gravitational lensing.</p>
-    <video controls playsinline loop preload="metadata" poster="poster.jpg?v=68df4f35-hq" aria-label="24-second Cryogenic music visualization, rendered at 1440p and 60 frames per second, with sound. Contains flashing lights.">
-      <source src="preview.mp4?v=68df4f35-hq" type="video/mp4">
-      Your browser cannot play this video. <a href="preview.mp4?v=68df4f35-hq">Download the film</a>.
-    </video>
-    <footer><span>24 seconds · Synchronized music · Contains flashing lights</span><a href="preview.mp4?v=68df4f35-hq">Open full-resolution film</a></footer>
-    <p>Press play, then use fullscreen for the best view. Each of the 1,440 frames was rendered individually in Unreal Engine at 2560 × 1440 — this is an offline film, not a screen recording or live browser simulation.<br>Music: Dave Summer — Where Did You Go (Club Mix). Visual build: 68df4f35.</p>
+    <p>From the buildup into the drop. Press play and use fullscreen; both films include music and flashing lights.</p>
+    <section aria-labelledby="cryogenic-title">
+      <header><h2 id="cryogenic-title">01 / Cryogenic</h2><span class="label">Ice blue · Violet</span></header>
+      <p class="song">Dave Summer — Where Did You Go (Club Mix)</p>
+      <video controls playsinline loop preload="metadata" poster="poster.jpg?v=68df4f35-drop1" aria-label="Cryogenic: Where Did You Go, 24-second buildup into the drop, with sound. Contains flashing lights.">
+        <source src="preview.mp4?v=68df4f35-drop1" type="video/mp4">
+        Your browser cannot play this video. <a href="preview.mp4?v=68df4f35-drop1">Download Cryogenic</a>.
+      </video>
+      <footer><span>24 seconds · 1440p / 60 FPS · Synchronized music</span><a href="preview.mp4?v=68df4f35-drop1">Open Cryogenic film</a></footer>
+    </section>
+    <section class="inferno" aria-labelledby="inferno-title">
+      <header><h2 id="inferno-title">02 / Inferno</h2><span class="label">Ember · Deep teal</span></header>
+      <p class="song">Kamino, Kyra Mastro — Vertigo</p>
+      <video controls playsinline loop preload="metadata" poster="vertigo-poster.jpg?v=68df4f35-drop1" aria-label="Inferno: Vertigo, 24-second buildup into the drop, with sound. Contains flashing lights.">
+        <source src="vertigo.mp4?v=68df4f35-drop1" type="video/mp4">
+        Your browser cannot play this video. <a href="vertigo.mp4?v=68df4f35-drop1">Download Inferno</a>.
+      </video>
+      <footer><span>24 seconds · 1440p / 60 FPS · Synchronized music</span><a href="vertigo.mp4?v=68df4f35-drop1">Open Inferno film</a></footer>
+    </section>
+    <p>Each film contains 1,440 individually rendered Unreal Engine frames at 2560 × 1440. These are offline films, not screen recordings or live browser simulations. Visual build: 68df4f35.</p>
   </main>
+  <script>
+    // Keep the two soundtracks from overlapping when switching films.
+    const films = [...document.querySelectorAll('video')];
+    films.forEach(film => film.addEventListener('play', () => {
+      films.forEach(other => { if (other !== film) other.pause(); });
+    }));
+  </script>
 </body>
 </html>
